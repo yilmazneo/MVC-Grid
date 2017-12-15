@@ -1,0 +1,11 @@
+﻿@model WebApplication1.Models.AdModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<script type="text/javascript" src="~/Scripts/adgrid.js"></script>
+
+<div id="grid">
+    @Html.Partial("Grid",Model)
+</div>
