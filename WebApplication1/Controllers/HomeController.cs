@@ -10,13 +10,13 @@ namespace WebApplication1.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index(int page=1,string sortBy="Ad Id")
+        public ActionResult Index(int page=1,string sortBy="Brand Name")
         {
             AdModel ads = Models.Repo.GetAds(page,sortBy);
             return View(ads);
         }
 
-        public ActionResult Grid(int page = 1, string sortBy = "Ad Id")
+        public ActionResult Grid(int page = 1, string sortBy = "Brand Name")
         {
             AdModel ads = Models.Repo.GetAds(page, sortBy);
             return View(ads);

@@ -24,10 +24,10 @@ namespace WebApplication1.Models
             DateTime end = new DateTime(2011,5,1);
             AdModel model = new AdModel();
             var ads = client.GetAdDataByDateRange(start, end).ToList<Ad>();
-            model.pageCount = (ads.Count/ pageSize) + (ads.Count% pageSize);
+            model.pageCount = (ads.Count/ pageSize) + ((ads.Count% pageSize)>0?1:0);
             model.currentPage = page;            
                         
-            model.ads = ads.OrderBy(a => GetSortColumn(sortBy,a)).Skip(page* pageSize).Take(pageSize).ToList<Ad>();
+            model.ads = ads.OrderBy(a => GetSortColumn(sortBy,a)).Skip( (page-1)* pageSize).Take(pageSize).ToList<Ad>();
             model.columnDisplayNames = new List<string>() { "Ad Id","Brand Id","Brand Name","Number of Pages","Position" };            
             return model;
         } 

@@ -1,5 +1,5 @@
 ﻿var currentPage = 1;
-var sortBy = 'Ad Id';
+var sortBy = 'Brand Name';
 
 function t(sortBy) {
     window.sortBy = sortBy;
