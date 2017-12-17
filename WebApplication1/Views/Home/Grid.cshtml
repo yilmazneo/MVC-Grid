@@ -1,11 +1,24 @@
 ﻿@model WebApplication1.Models.AdModel
 
+@{ 
+    Layout = null;
+}
+
 <table class="table">
     <thead>
         <tr>
             @foreach (var c in Model.columnDisplayNames)
             {
-                <th><a href="#" onclick="t('@c')">@c</a></th>
+                <th>
+                    @if (Model.sortingEnabled)
+                    {
+                        <a href="#" onclick="sort('@c')">@c</a>
+                    }
+                    else
+                    {
+                        @c
+                    }
+                </th>
             }
         </tr>
     </thead>
@@ -31,18 +44,22 @@
     }
 
 </table>
-<div>
-    @for (int i = 1; i <= Model.pageCount; i++)
-    {
-        <span>
-            @if (i == Model.currentPage)
-            {
-                <a href="#" class="btn btn-link disabled" onclick="changePage(@i)">@i</a>
-            }
-            else
-            {
-                <a href="#" class="btn btn-link active" onclick="changePage(@i)">@i</a>
-            }
-        </span>
-    }
-</div>
+
+@if (Model.pagingEnabled)
+{
+    <div>
+        @for (int i = 1; i <= Model.pageCount; i++)
+        {
+            <span>
+                @if (i == Model.currentPage)
+                {
+                    <a href="#" class="btn btn-link disabled" onclick="changePage(@i)">@i</a>
+                }
+                else
+                {
+                    <a href="#" class="btn btn-link active" onclick="changePage(@i)">@i</a>
+                }
+            </span>
+        }
+    </div>
+}

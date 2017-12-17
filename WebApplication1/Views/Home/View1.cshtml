@@ -1,0 +1,15 @@
+﻿@model WebApplication1.Models.AdModel
+
+@{
+    ViewBag.Title = "View1";
+}
+
+<script type="text/javascript">
+    var modelNumber = 1; 
+</script>
+
+<h2>A full list of the ads, including all object data (AdId, Brand Id and Name, NumPages, and Position).  NumPages refers to how many pages the ad takes up in a magazine (0.5 would be a half-page ad) and Position is a string that is either “Page” or “Cover,” describing where in the magazine the ad ran.  This list should be sortable and paged.  You may use client-side or server-side code to accomplish this.  Default sort should be by brand name alphabetically. </h2>
+
+<div id="grid">
+    @Html.Partial("Grid",Model)
+</div>

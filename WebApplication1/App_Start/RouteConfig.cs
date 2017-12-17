@@ -15,8 +15,8 @@ namespace WebApplication1
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{page}/{sortBy}",
-                defaults: new { controller = "Home", action = "Index", page = UrlParameter.Optional,sortBy=UrlParameter.Optional }
+                url: "{controller}/{action}/{page}/{sortBy}/{modelNumber}",
+                defaults: new { controller = "Home", action = "Index", page = UrlParameter.Optional,sortBy=UrlParameter.Optional,modelNumber=UrlParameter.Optional }
             );
         }
     }

@@ -1,10 +1,10 @@
 ﻿var currentPage = 1;
 var sortBy = 'Brand Name';
 
-function t(sortBy) {
+function sort(sortBy) {
     window.sortBy = sortBy;
     $.ajax({
-        url: "/home/grid/" + window.currentPage + "/" + sortBy
+        url: "/home/grid/" + window.currentPage + "/" + sortBy + "/" + modelNumber
     })
         .done(function (data) {
             $('#grid').html(data);
@@ -14,9 +14,8 @@ function t(sortBy) {
 function changePage(pageNumber) {
     window.currentPage = pageNumber;
     $.ajax({
-        url: "/home/grid/" + pageNumber + "/" + window.sortBy,
-        beforeSend: function () {
-            $('#grid').popover('show');
+        url: "/home/grid/" + pageNumber + "/" + window.sortBy + "/" + modelNumber,
+        beforeSend: function () {            
         }
     })
 

@@ -1,0 +1,16 @@
+﻿@model WebApplication1.Models.AdModel
+
+@{
+    ViewBag.Title = "View2";
+}
+
+<script type="text/javascript">
+    var modelNumber = 2;
+</script>
+
+<h2>A list of ads which appeared in the “Cover” position and also had at least 50% page coverage.  This list should also be sortable and paged, and sorted by brand name alphabetically.</h2>
+
+<div id="grid">
+    @Html.Partial("Grid",Model)
+</div>
+

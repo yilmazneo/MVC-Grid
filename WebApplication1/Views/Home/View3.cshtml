@@ -1,0 +1,11 @@
+﻿@model WebApplication1.Models.AdModel
+
+@{
+    ViewBag.Title = "View3";
+}
+
+<h2>The top five ads by page coverage amount, distinct by brand.  Sort by page coverage amount (descending), then brand name alphabetically.</h2>
+
+<div id="grid">
+    @Html.Partial("Grid",Model)
+</div>

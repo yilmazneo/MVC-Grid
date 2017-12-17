@@ -1,0 +1,39 @@
+﻿@model WebApplication1.Models.BrandModel
+
+@{
+    ViewBag.Title = "View4";
+}
+
+
+<h2>The top five brands by page coverage amount.  Keep in mind that a single brand may run multiple ads.  Also sorted by page coverage amount (descending), then brand name alphabetically.</h2>
+
+<div id="grid">
+    <table class="table">
+        <thead>
+            <tr>
+                @foreach (var c in Model.columnDisplayNames)
+                {
+                    <th>
+                        @c
+                    </th>
+                }
+            </tr>
+        </thead>
+        @foreach (var item in Model.brands)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BrandId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BrandName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PageCoverageSum)
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
