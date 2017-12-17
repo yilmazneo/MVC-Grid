@@ -8,7 +8,7 @@ using WebApplication1.ServiceReference1;
 
 namespace WebApplication1.Controllers
 {
-    public class HomeController : Controller
+    public class AdsController : Controller
     {
         public ActionResult Index()
         {
