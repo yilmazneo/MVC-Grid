@@ -11,6 +11,7 @@ namespace WebApplication1.Models
         public List<Ad> ads { get; set; }
         public int pageCount { get; set; }
         public int currentPage { get; set; }
+        public string currentSortColumnDisplayname { get; set; }
         public List<string> columnDisplayNames { get; set; }
         public bool sortingEnabled { get; set; }
         public bool pagingEnabled { get; set; }
@@ -71,6 +72,7 @@ namespace WebApplication1.Models
             {
                 pageCount = GetNumberOfPages(ads.Count),
                 currentPage = page,
+                currentSortColumnDisplayname = sortBy,
                 sortingEnabled = true,
                 pagingEnabled = true,
                 ads = dataSource,
@@ -95,6 +97,7 @@ namespace WebApplication1.Models
             {
                 pageCount = GetNumberOfPages(filteredAds.Count()),
                 currentPage = page,
+                currentSortColumnDisplayname = sortBy,
                 sortingEnabled = true,
                 pagingEnabled = true,
                 ads = dataSource,

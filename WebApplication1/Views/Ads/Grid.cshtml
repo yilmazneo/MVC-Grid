@@ -12,7 +12,14 @@
                 <th>
                     @if (Model.sortingEnabled)
                     {
-                        <a href="#" onclick="sort('@c')">@c</a>
+                        if (Model.currentSortColumnDisplayname == c)
+                        {
+                            <a href="#" class="btn btn-link disabled" onclick="sort('@c')">@c</a>
+                        }
+                        else
+                        {
+                            <a href="#" class="btn btn-link active" onclick="sort('@c')">@c</a>
+                        }
                     }
                     else
                     {
