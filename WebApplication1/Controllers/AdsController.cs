@@ -23,25 +23,25 @@ namespace WebApplication1.Controllers
 
         public ActionResult View1(int page = 1, string sortBy = "Brand Name")
         {
-            AdModel ads = Models.Repo.GetAllAds(page, sortBy);
+            AdModel ads = Models.Repo.GetModelForAllAds(page, sortBy);
             return View(ads);
         }
 
         public ActionResult View2(int page = 1, string sortBy = "Brand Name")
         {
-            AdModel ads = Models.Repo.GetCoverAdsWithAtLeastHalfCoverage(page, sortBy);
+            AdModel ads = Models.Repo.GetModelForCoverAdsWithAtLeastHalfCoverage(page, sortBy);
             return View(ads);
         }
 
         public ActionResult View3()
         {
-            AdModel ads = Models.Repo.GetTop5MaxCoverageAdsByBrand();
+            AdModel ads = Models.Repo.GetModelForTop5MaxCoverageAdsByBrand();
             return View(ads);
         }
 
         public ActionResult View4()
         {
-            BrandModel ads = Models.Repo.GetTop5BrandsWithMaxSumPageCoverage();
+            BrandModel ads = Models.Repo.GetModelForTop5BrandsWithMaxSumPageCoverage();
             return View(ads);
         }
 
